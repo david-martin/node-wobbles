@@ -1,0 +1,1260 @@
+{
+  "id": 19,
+  "title": "NODEJS_MEMORY_TEST",
+  "originalTitle": "NODEJS_MEMORY_TEST",
+  "tags": [],
+  "style": "dark",
+  "timezone": "browser",
+  "editable": true,
+  "hideControls": false,
+  "sharedCrosshair": false,
+  "rows": [
+    {
+      "collapse": false,
+      "editable": true,
+      "height": "250px",
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": null,
+          "editable": true,
+          "error": false,
+          "fill": 1,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": null,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 1,
+          "isNew": true,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [
+            {
+              "alias": "percent used",
+              "yaxis": 2
+            },
+            {
+              "alias": "percentUsed",
+              "yaxis": 2
+            }
+          ],
+          "span": 12,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "alias": "percentUsed",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "NODEJS_MEMORY_TEST_getHeapStatistics",
+              "query": "SELECT \"value\" FROM \"NODEJS_MEMORY_TEST_getHeapStatistics\" WHERE \"type\" = 'percentUsed' AND $timeFilter",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "type",
+                  "operator": "=",
+                  "value": "percentUsed"
+                }
+              ]
+            },
+            {
+              "alias": "total_heap_size",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "NODEJS_MEMORY_TEST_getHeapStatistics",
+              "query": "SELECT \"value\" FROM \"NODEJS_MEMORY_TEST_getHeapStatistics\" WHERE \"type\" = 'total_heap_size' AND $timeFilter",
+              "refId": "B",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "type",
+                  "operator": "=",
+                  "value": "total_heap_size"
+                }
+              ]
+            },
+            {
+              "alias": "total_heap_size_executable",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "NODEJS_MEMORY_TEST_getHeapStatistics",
+              "query": "SELECT \"value\" FROM \"NODEJS_MEMORY_TEST_getHeapStatistics\" WHERE \"type\" = 'total_heap_size_executable' AND $timeFilter",
+              "refId": "C",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "type",
+                  "operator": "=",
+                  "value": "total_heap_size_executable"
+                }
+              ]
+            },
+            {
+              "alias": "total_physical_size",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "NODEJS_MEMORY_TEST_getHeapStatistics",
+              "query": "SELECT \"value\" FROM \"NODEJS_MEMORY_TEST_getHeapStatistics\" WHERE \"type\" = 'total_physical_size' AND $timeFilter",
+              "refId": "D",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "type",
+                  "operator": "=",
+                  "value": "total_physical_size"
+                }
+              ]
+            },
+            {
+              "alias": "total_available_size",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "NODEJS_MEMORY_TEST_getHeapStatistics",
+              "query": "SELECT \"value\" FROM \"NODEJS_MEMORY_TEST_getHeapStatistics\" WHERE \"type\" = 'total_available_size' AND $timeFilter",
+              "refId": "E",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "type",
+                  "operator": "=",
+                  "value": "total_available_size"
+                }
+              ]
+            },
+            {
+              "alias": "used_heap_size",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "NODEJS_MEMORY_TEST_getHeapStatistics",
+              "query": "SELECT \"value\" FROM \"NODEJS_MEMORY_TEST_getHeapStatistics\" WHERE \"type\" = 'used_heap_size' AND $timeFilter",
+              "refId": "F",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "type",
+                  "operator": "=",
+                  "value": "used_heap_size"
+                }
+              ]
+            },
+            {
+              "alias": "heap_size_limit",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "NODEJS_MEMORY_TEST_getHeapStatistics",
+              "query": "SELECT \"value\" FROM \"NODEJS_MEMORY_TEST_getHeapStatistics\" WHERE \"type\" = 'heap_size_limit' AND $timeFilter",
+              "refId": "G",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "type",
+                  "operator": "=",
+                  "value": "heap_size_limit"
+                }
+              ]
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Heap Statistics",
+          "tooltip": {
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "bytes",
+            "percentunit"
+          ]
+        }
+      ],
+      "title": "Row"
+    },
+    {
+      "collapse": false,
+      "editable": true,
+      "height": "250px",
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": null,
+          "editable": true,
+          "error": false,
+          "fill": 1,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": null,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 2,
+          "isNew": true,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 12,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "alias": "physical_space_size",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "NODEJS_MEMORY_TEST_getHeapSpaceStatistics_new_space",
+              "query": "SELECT \"value\" FROM \"NODEJS_MEMORY_TEST_getHeapSpaceStatistics_new_space\" WHERE \"type\" = 'physical_space_size' AND $timeFilter",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "type",
+                  "operator": "=",
+                  "value": "physical_space_size"
+                }
+              ]
+            },
+            {
+              "alias": "space_available_size",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "NODEJS_MEMORY_TEST_getHeapSpaceStatistics_new_space",
+              "query": "SELECT \"value\" FROM \"NODEJS_MEMORY_TEST_getHeapSpaceStatistics_new_space\" WHERE \"type\" = 'space_available_size' AND $timeFilter",
+              "refId": "B",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "type",
+                  "operator": "=",
+                  "value": "space_available_size"
+                }
+              ]
+            },
+            {
+              "alias": "space_size",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "NODEJS_MEMORY_TEST_getHeapSpaceStatistics_new_space",
+              "query": "SELECT \"value\" FROM \"NODEJS_MEMORY_TEST_getHeapSpaceStatistics_new_space\" WHERE \"type\" = 'space_size' AND $timeFilter",
+              "refId": "C",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "type",
+                  "operator": "=",
+                  "value": "space_size"
+                }
+              ]
+            },
+            {
+              "alias": "space_used_size",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "NODEJS_MEMORY_TEST_getHeapSpaceStatistics_new_space",
+              "query": "SELECT \"value\" FROM \"NODEJS_MEMORY_TEST_getHeapSpaceStatistics_new_space\" WHERE \"type\" = 'space_used_size' AND $timeFilter",
+              "refId": "D",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "type",
+                  "operator": "=",
+                  "value": "space_used_size"
+                }
+              ]
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Heap Space Statistics New Space",
+          "tooltip": {
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "bytes",
+            "short"
+          ]
+        }
+      ],
+      "title": "New row"
+    },
+    {
+      "collapse": false,
+      "editable": true,
+      "height": "250px",
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": null,
+          "editable": true,
+          "error": false,
+          "fill": 1,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": null,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 2,
+          "isNew": true,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 12,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "alias": "physical_space_size",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "NODEJS_MEMORY_TEST_getHeapSpaceStatistics_old_space",
+              "query": "SELECT \"value\" FROM \"NODEJS_MEMORY_TEST_getHeapSpaceStatistics_old_space\" WHERE \"type\" = 'physical_space_size' AND $timeFilter",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "type",
+                  "operator": "=",
+                  "value": "physical_space_size"
+                }
+              ]
+            },
+            {
+              "alias": "space_available_size",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "NODEJS_MEMORY_TEST_getHeapSpaceStatistics_old_space",
+              "query": "SELECT \"value\" FROM \"NODEJS_MEMORY_TEST_getHeapSpaceStatistics_old_space\" WHERE \"type\" = 'space_available_size' AND $timeFilter",
+              "refId": "B",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "type",
+                  "operator": "=",
+                  "value": "space_available_size"
+                }
+              ]
+            },
+            {
+              "alias": "space_size",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "NODEJS_MEMORY_TEST_getHeapSpaceStatistics_old_space",
+              "query": "SELECT \"value\" FROM \"NODEJS_MEMORY_TEST_getHeapSpaceStatistics_old_space\" WHERE \"type\" = 'space_size' AND $timeFilter",
+              "refId": "C",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "type",
+                  "operator": "=",
+                  "value": "space_size"
+                }
+              ]
+            },
+            {
+              "alias": "space_used_size",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "NODEJS_MEMORY_TEST_getHeapSpaceStatistics_old_space",
+              "query": "SELECT \"value\" FROM \"NODEJS_MEMORY_TEST_getHeapSpaceStatistics_old_space\" WHERE \"type\" = 'space_used_size' AND $timeFilter",
+              "refId": "D",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "type",
+                  "operator": "=",
+                  "value": "space_used_size"
+                }
+              ]
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Heap Space Statistics Old Space",
+          "tooltip": {
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "bytes",
+            "short"
+          ]
+        }
+      ],
+      "title": "New row"
+    },
+    {
+      "collapse": true,
+      "editable": true,
+      "height": "250px",
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": null,
+          "editable": true,
+          "error": false,
+          "fill": 1,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": null,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 2,
+          "isNew": true,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 12,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "alias": "physical_space_size",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "NODEJS_MEMORY_TEST_getHeapSpaceStatistics_code_space",
+              "query": "SELECT \"value\" FROM \"NODEJS_MEMORY_TEST_getHeapSpaceStatistics_code_space\" WHERE \"type\" = 'physical_space_size' AND $timeFilter",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "type",
+                  "operator": "=",
+                  "value": "physical_space_size"
+                }
+              ]
+            },
+            {
+              "alias": "space_available_size",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "NODEJS_MEMORY_TEST_getHeapSpaceStatistics_code_space",
+              "query": "SELECT \"value\" FROM \"NODEJS_MEMORY_TEST_getHeapSpaceStatistics_code_space\" WHERE \"type\" = 'space_available_size' AND $timeFilter",
+              "refId": "B",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "type",
+                  "operator": "=",
+                  "value": "space_available_size"
+                }
+              ]
+            },
+            {
+              "alias": "space_size",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "NODEJS_MEMORY_TEST_getHeapSpaceStatistics_code_space",
+              "query": "SELECT \"value\" FROM \"NODEJS_MEMORY_TEST_getHeapSpaceStatistics_code_space\" WHERE \"type\" = 'space_size' AND $timeFilter",
+              "refId": "C",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "type",
+                  "operator": "=",
+                  "value": "space_size"
+                }
+              ]
+            },
+            {
+              "alias": "space_used_size",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "NODEJS_MEMORY_TEST_getHeapSpaceStatistics_code_space",
+              "query": "SELECT \"value\" FROM \"NODEJS_MEMORY_TEST_getHeapSpaceStatistics_code_space\" WHERE \"type\" = 'space_used_size' AND $timeFilter",
+              "refId": "D",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "type",
+                  "operator": "=",
+                  "value": "space_used_size"
+                }
+              ]
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Heap Space Statistics Code Space",
+          "tooltip": {
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "bytes",
+            "short"
+          ]
+        }
+      ],
+      "title": "New row"
+    },
+    {
+      "collapse": true,
+      "editable": true,
+      "height": "250px",
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": null,
+          "editable": true,
+          "error": false,
+          "fill": 1,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": null,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 2,
+          "isNew": true,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 12,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "alias": "physical_space_size",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "NODEJS_MEMORY_TEST_getHeapSpaceStatistics_map_space",
+              "query": "SELECT \"value\" FROM \"NODEJS_MEMORY_TEST_getHeapSpaceStatistics_map_space\" WHERE \"type\" = 'physical_space_size' AND $timeFilter",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "type",
+                  "operator": "=",
+                  "value": "physical_space_size"
+                }
+              ]
+            },
+            {
+              "alias": "space_available_size",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "NODEJS_MEMORY_TEST_getHeapSpaceStatistics_map_space",
+              "query": "SELECT \"value\" FROM \"NODEJS_MEMORY_TEST_getHeapSpaceStatistics_map_space\" WHERE \"type\" = 'space_available_size' AND $timeFilter",
+              "refId": "B",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "type",
+                  "operator": "=",
+                  "value": "space_available_size"
+                }
+              ]
+            },
+            {
+              "alias": "space_size",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "NODEJS_MEMORY_TEST_getHeapSpaceStatistics_map_space",
+              "query": "SELECT \"value\" FROM \"NODEJS_MEMORY_TEST_getHeapSpaceStatistics_map_space\" WHERE \"type\" = 'space_size' AND $timeFilter",
+              "refId": "C",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "type",
+                  "operator": "=",
+                  "value": "space_size"
+                }
+              ]
+            },
+            {
+              "alias": "space_used_size",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "NODEJS_MEMORY_TEST_getHeapSpaceStatistics_map_space",
+              "query": "SELECT \"value\" FROM \"NODEJS_MEMORY_TEST_getHeapSpaceStatistics_map_space\" WHERE \"type\" = 'space_used_size' AND $timeFilter",
+              "refId": "D",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "type",
+                  "operator": "=",
+                  "value": "space_used_size"
+                }
+              ]
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Heap Space Statistics Map Space",
+          "tooltip": {
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "bytes",
+            "short"
+          ]
+        }
+      ],
+      "title": "New row"
+    },
+    {
+      "collapse": true,
+      "editable": true,
+      "height": "250px",
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": null,
+          "editable": true,
+          "error": false,
+          "fill": 1,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": null,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 2,
+          "isNew": true,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 12,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "alias": "physical_space_size",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "NODEJS_MEMORY_TEST_getHeapSpaceStatistics_large_object_space",
+              "query": "SELECT \"value\" FROM \"NODEJS_MEMORY_TEST_getHeapSpaceStatistics_large_object_space\" WHERE \"type\" = 'physical_space_size' AND $timeFilter",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "type",
+                  "operator": "=",
+                  "value": "physical_space_size"
+                }
+              ]
+            },
+            {
+              "alias": "space_available_size",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "NODEJS_MEMORY_TEST_getHeapSpaceStatistics_large_object_space",
+              "query": "SELECT \"value\" FROM \"NODEJS_MEMORY_TEST_getHeapSpaceStatistics_large_object_space\" WHERE \"type\" = 'space_available_size' AND $timeFilter",
+              "refId": "B",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "type",
+                  "operator": "=",
+                  "value": "space_available_size"
+                }
+              ]
+            },
+            {
+              "alias": "space_size",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "NODEJS_MEMORY_TEST_getHeapSpaceStatistics_large_object_space",
+              "query": "SELECT \"value\" FROM \"NODEJS_MEMORY_TEST_getHeapSpaceStatistics_large_object_space\" WHERE \"type\" = 'space_size' AND $timeFilter",
+              "refId": "C",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "type",
+                  "operator": "=",
+                  "value": "space_size"
+                }
+              ]
+            },
+            {
+              "alias": "space_used_size",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "NODEJS_MEMORY_TEST_getHeapSpaceStatistics_large_object_space",
+              "query": "SELECT \"value\" FROM \"NODEJS_MEMORY_TEST_getHeapSpaceStatistics_large_object_space\" WHERE \"type\" = 'space_used_size' AND $timeFilter",
+              "refId": "D",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "type",
+                  "operator": "=",
+                  "value": "space_used_size"
+                }
+              ]
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Heap Space Statistics Large Object Space",
+          "tooltip": {
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "bytes",
+            "short"
+          ]
+        }
+      ],
+      "title": "New row"
+    },
+    {
+      "title": "New row",
+      "height": "250px",
+      "editable": true,
+      "collapse": false,
+      "panels": [
+        {
+          "title": "GC Type (1=minor,2=major,3=both)",
+          "error": false,
+          "span": 12,
+          "editable": true,
+          "type": "graph",
+          "isNew": true,
+          "id": 3,
+          "datasource": null,
+          "renderer": "flot",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "short",
+            "short"
+          ],
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "rightMax": null,
+            "leftMin": null,
+            "rightMin": null,
+            "rightLogBase": 1,
+            "threshold1": null,
+            "threshold2": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "lines": false,
+          "fill": 1,
+          "linewidth": 2,
+          "points": true,
+          "pointradius": 1,
+          "bars": false,
+          "stack": false,
+          "percentage": false,
+          "legend": {
+            "show": true,
+            "values": false,
+            "min": false,
+            "max": false,
+            "current": false,
+            "total": false,
+            "avg": false
+          },
+          "nullPointMode": "connected",
+          "steppedLine": false,
+          "tooltip": {
+            "value_type": "cumulative",
+            "shared": true
+          },
+          "timeFrom": null,
+          "timeShift": null,
+          "targets": [
+            {
+              "refId": "A",
+              "dsType": "influxdb",
+              "resultFormat": "time_series",
+              "tags": [
+                {
+                  "key": "type",
+                  "operator": "=",
+                  "value": "gctype"
+                }
+              ],
+              "groupBy": [],
+              "select": [
+                [
+                  {
+                    "type": "field",
+                    "params": [
+                      "value"
+                    ]
+                  }
+                ]
+              ],
+              "measurement": "NODEJS_MEMORY_TEST_gc",
+              "query": "SELECT \"value\" FROM \"NODEJS_MEMORY_TEST_gc\" WHERE \"type\" = 'gctype' AND $timeFilter"
+            }
+          ],
+          "aliasColors": {},
+          "seriesOverrides": [
+            {}
+          ],
+          "links": []
+        }
+      ]
+    }
+  ],
+  "time": {
+    "from": "now-5m",
+    "to": "now"
+  },
+  "timepicker": {
+    "now": true,
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ],
+    "time_options": [
+      "5m",
+      "15m",
+      "1h",
+      "6h",
+      "12h",
+      "24h",
+      "2d",
+      "7d",
+      "30d"
+    ]
+  },
+  "templating": {
+    "list": []
+  },
+  "annotations": {
+    "list": []
+  },
+  "refresh": "5s",
+  "schemaVersion": 8,
+  "version": 4,
+  "links": []
+}

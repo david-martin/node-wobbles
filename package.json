@@ -9,6 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "fh-component-metrics": "^2.6.0",
+    "gc-stats": "^1.0.0",
     "http-proxy": "^1.16.2"
   }
 }

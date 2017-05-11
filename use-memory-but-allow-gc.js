@@ -31,8 +31,10 @@ var metrics = fhComponentMetrics(metricsConf);
     }
 }
 */
+var gcs = [0, 0, 0];
 gc.on('stats', function (stats) {
-  console.log('GC happened TYPE', stats.gctype, 'BEFORE', stats.before.usedHeapSize, 'AFTER', stats.after.usedHeapSize);
+  gcs[stats.gctype + 1] ++;
+  console.log(new Date().toString(), 'GC happened TYPE', stats.gctype, 'COUNT', gcs[stats.gctype + 1], 'BEFORE', stats.before.usedHeapSize, 'AFTER', stats.after.usedHeapSize);
 	metrics.gauge('NODEJS_MEMORY_TEST_gc', {'type': 'gctype'}, stats.gctype);
 	// metrics.gauge('NODEJS_MEMORY_TEST_gc', {'type': 'before.totalHeapSize'}, stats.before.totalHeapSize);
 	// metrics.gauge('NODEJS_MEMORY_TEST_gc', {'type': 'before.totalHeapExecutableSize'}, stats.before.totalHeapExecutableSize);
@@ -60,7 +62,7 @@ function alloc() {
   heap_size_limit: 1535115264 }*/
 	const stats = v8.getHeapStatistics();
 	const percentUsed = stats.total_heap_size / stats.heap_size_limit;
-	console.log((percentUsed * 100).toPrecision(2) + '%', stats.total_heap_size, '/', stats.heap_size_limit);
+	console.log(new Date().toString(), (percentUsed * 100).toPrecision(2) + '%', stats.total_heap_size, '/', stats.heap_size_limit);
 	metrics.gauge('NODEJS_MEMORY_TEST_getHeapStatistics', {'type': 'percentUsed'}, percentUsed);
 	metrics.gauge('NODEJS_MEMORY_TEST_getHeapStatistics', {'type': 'total_heap_size'}, stats.total_heap_size);
 	metrics.gauge('NODEJS_MEMORY_TEST_getHeapStatistics', {'type': 'total_heap_size_executable'}, stats.total_heap_size_executable);

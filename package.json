@@ -1,7 +1,8 @@
 {
   "name": "node-wobbles",
   "version": "1.0.0",
-  "description": "## Example",
+  "description": "Various scripts & things for reproducing unexpected behaviour in Node.js applications.",
+  "repository": "https://github.com/david-martin/node-wobbles",
   "main": "econnreset.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,8 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "fh-component-metrics": "^2.6.0",
-    "gc-stats": "^1.0.0",
-    "http-proxy": "^1.16.2"
+    "fh-component-metrics": "^2.7.0",
+    "gc-stats": "^1.4.0",
+    "http-proxy": "^1.18.1"
   }
 }
